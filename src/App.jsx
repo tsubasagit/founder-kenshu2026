@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Terminal,
   Zap,
@@ -12,18 +12,9 @@ import {
   GraduationCap
 } from 'lucide-react';
 
+const CONTACT_FORM_URL = 'https://share-na2.hsforms.com/2T1pQ6j2sQzajdd3AIDeWqgcy93d?utm_source=https://apptalenthub.co.jp';
+
 const App = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert('アンケートへのご協力ありがとうございます！ファウンダー専任サポーターよりご連絡いたします。');
-  };
-
-  const scrollToConsult = () => {
-    const formSection = document.querySelector('form');
-    if (formSection) formSection.closest('section').scrollIntoView({ behavior: 'smooth' });
-  };
 
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-indigo-100 selection:text-indigo-900">
@@ -42,9 +33,9 @@ const App = () => {
           <div className="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
             <a href="#anxiety" className="hover:text-indigo-600 transition-colors">お悩み</a>
             <a href="#how-it-works" className="hover:text-indigo-600 transition-colors">研修の特徴</a>
-            <button type="button" onClick={scrollToConsult} className="bg-slate-900 hover:bg-indigo-600 text-white px-6 py-2.5 rounded-full transition-all shadow-md">
+            <a href={CONTACT_FORM_URL} target="_blank" rel="noopener noreferrer" className="bg-slate-900 hover:bg-indigo-600 text-white px-6 py-2.5 rounded-full transition-all shadow-md inline-block">
               相談してみる
-            </button>
+            </a>
           </div>
         </div>
       </nav>
@@ -69,9 +60,9 @@ const App = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <button type="button" onClick={scrollToConsult} className="group w-full sm:w-auto px-12 py-6 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-black text-xl transition-all flex items-center justify-center gap-3 shadow-2xl shadow-indigo-200">
+            <a href={CONTACT_FORM_URL} target="_blank" rel="noopener noreferrer" className="group w-full sm:w-auto px-12 py-6 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-black text-xl transition-all flex items-center justify-center gap-3 shadow-2xl shadow-indigo-200">
               まずは話を聞いてみる <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
-            </button>
+            </a>
           </div>
         </div>
       </header>
@@ -220,35 +211,9 @@ const App = () => {
             <h3 className="text-2xl font-black mb-4">ファウンダー向け無料カウンセリング</h3>
             <p className="text-slate-500 mb-12 font-bold">あなたのペースで、あなたのビジネスに合わせて進めます。</p>
 
-            <form onSubmit={handleSubmit} className="space-y-6 text-left">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-xs font-black text-slate-400 uppercase tracking-widest mb-3 italic">Name</label>
-                  <input
-                    type="text"
-                    className="w-full px-6 py-5 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-indigo-600 outline-none font-bold"
-                    placeholder="お名前"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-black text-slate-400 uppercase tracking-widest mb-3 italic">E-mail</label>
-                  <input
-                    type="email"
-                    className="w-full px-6 py-5 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-indigo-600 outline-none font-bold"
-                    placeholder="ご連絡先"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
-                  />
-                </div>
-              </div>
-              <button type="submit" className="w-full py-6 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-black text-xl transition-all shadow-xl shadow-indigo-200 flex items-center justify-center gap-3">
-                やさしい研修について詳しく聞く <ArrowRight size={24} />
-              </button>
-            </form>
+            <a href={CONTACT_FORM_URL} target="_blank" rel="noopener noreferrer" className="w-full py-6 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-black text-xl transition-all shadow-xl shadow-indigo-200 flex items-center justify-center gap-3">
+              やさしい研修について詳しく聞く <ArrowRight size={24} />
+            </a>
           </div>
         </div>
       </section>
@@ -265,7 +230,7 @@ const App = () => {
           <div className="flex gap-12 text-sm font-bold text-slate-400 uppercase tracking-[0.2em] text-[10px]">
             <a href="#" className="hover:text-indigo-600 transition-colors">Vision</a>
             <a href="#" className="hover:text-indigo-600 transition-colors">Privacy</a>
-            <a href="#" className="hover:text-indigo-600 transition-colors">Contact</a>
+            <a href={CONTACT_FORM_URL} target="_blank" rel="noopener noreferrer" className="hover:text-indigo-600 transition-colors">Contact</a>
           </div>
           <p className="text-[10px] text-slate-400 font-black uppercase tracking-[0.3em]">© 2024 AI DRIVEN FOUNDERS. GENTLE & FAST.</p>
         </div>
